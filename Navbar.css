@@ -1,0 +1,73 @@
+body {
+    background-image: Url(http://i.stack.imgur.com/vhoa0.jpg);
+}
+h1 {
+    text-shadow: 4px 2px #A0DEE0;
+    background-color: rgba(255,255,255,0.8);
+}
+
+
+#navbar {
+    background-color: orange;
+    text-align:center;
+    font-family: cursive
+}
+
+
+
+#navbar > li {
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 23px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+#navbar > li > a{
+    color: blue;
+}
+
+.am-body {
+    background-color:#FFFFF0;
+}
+
+.am-heading {
+    color: #0D4A15;
+    text-align: center;
+    font-size: xx-large;
+    font-style: italic;
+    border-radius: 20%;
+}
+
+.am-heading2 {
+    color:#5D8E09;
+    font-style: italic;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 20%;
+}
+
+.am-body {
+    color: blue;
+    font-size: smaller;
+    font-style: oblique
+}
+
+
+
+.am-images {
+    width: 300px;
+}
+
+.am-description {
+    font-size: 30px;
+    color: #800000;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 20%;
+    padding: 50px;
+
+}
+
+.am-table {
+    width: 69%;
+    border-spacing: 20px;
+}
