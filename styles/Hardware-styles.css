@@ -1,0 +1,88 @@
+body {
+    background-image: Url(http://wallpaper.zone/img/3112371.jpg);
+}
+h1 {
+    text-shadow: 10px 10px #4FFAC6;
+    background-color: rgba(255,255,255,0.85);
+}
+
+
+#navbar {
+    background-color:#C8F110;
+    text-align:center;
+    font-family: cursive
+}
+
+.am-gif {
+    width: 700px
+}
+
+#navbar > li {
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 23px;
+    background-color: rgba(255,255,255,0.85);
+}
+
+#navbar > li > a{
+    color: blue;
+}
+
+.am-body {
+    background-color:#FFFFF0;
+}
+
+.am-heading {
+    color: #3A0E0D;
+    text-align: center;
+    font-size: 90px;
+    font-style: italic;
+    border-radius: 20%;
+}
+
+.am-headings {
+    color:#D77601;
+    font-style: italic;
+    background-color: rgba(255,255,255,0.85);
+    width: 40%;
+    border-radius: 20%;
+    padding: 45px;
+    text-align: center;
+    font-size: large;
+    font-family: sans-serif
+}
+
+.am-body {
+    color: blue;
+    font-size: smaller;
+    font-style: oblique
+}
+
+
+
+.am-images {
+    width: 350px;
+}
+
+.am-description {
+    font-size: 23px;
+    color: #800000;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 20%;
+    padding: 45px;
+
+}
+
+.am-table {
+    width: 75%;
+    border-spacing: 20px;
+}
+
+.am-closing {
+    font-size: 35px;
+    color: #241997;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 20%;
+    padding: 35px;
+    font-family: cursive
