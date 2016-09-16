@@ -86,3 +86,20 @@ h1 {
     border-radius: 20%;
     padding: 35px;
     font-family: cursive
+}
+
+.am-Sources-Title {
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 40px;
+    background-color: rgba(255,255,255,0.85);
+    font-family: fantasy;
+}
+.am-Sources {
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 23px;
+    background-color: rgba(255,255,255,0.85);
+}
