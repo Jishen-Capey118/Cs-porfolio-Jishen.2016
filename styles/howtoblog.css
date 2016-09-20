@@ -1,0 +1,108 @@
+body {
+    background-image: Url(http://www.spyderonlines.com/images/wallpapers/computer-background-pics/computer-background-pics-9.jpg);
+}
+h1 {
+    text-shadow: 9px 9px #4FFAC6;
+    background-color: rgba(255,255,255,0.85);
+}
+
+
+#navbar {
+    background-color:#C8F110;
+    text-align:center;
+    font-family: cursive
+}
+
+.am-gif {
+    width: 600px
+}
+
+#navbar > li {
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 23px;
+    background-color: rgba(255,255,255,0.85);
+}
+
+#navbar > li > a{
+    color: blue;
+}
+
+.am-body {
+    background-color:#FFFFF0;
+}
+
+.am-heading {
+    color: #E16010;
+    text-align: center;
+    font-size: 80px;
+    font-style: italic;
+    border-radius: 20%;
+}
+
+.am-headings {
+    color:#0AA531;
+    font-style: italic;
+    background-color: rgba(255,255,255,0.85);
+    width: 40%;
+    border-radius: 20%;
+    padding: 45px;
+    text-align: center;
+    font-size: large;
+}
+
+.am-body {
+    color: blue;
+    font-size: smaller;
+    font-style: oblique
+}
+
+
+
+.am-images {
+    width: 650px;
+}
+.am-images2 {
+    width: 500px
+}
+
+.am-description {
+    font-size: 23px;
+    color: #7A0717;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 20%;
+    padding: 45px;
+    font-family: monospace
+
+}
+
+.am-table {
+    width: 75%;
+    border-spacing: 20px;
+}
+
+.am-closing {
+    font-size: 50px;
+    color: #099D7B;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 20%;
+    padding: 35px;
+    font-family: cursive
+}
+
+.am-Sources-Title {
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 40px;
+    background-color: rgba(255,255,255,0.85);
+    font-family: fantasy;
+}
+.am-Sources {
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 23px;
+    background-color: rgba(255,255,255,0.85);
+}
