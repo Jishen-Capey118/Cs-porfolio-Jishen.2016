@@ -1,0 +1,114 @@
+body {
+    background-image: Url(https://images8.alphacoders.com/354/354497.jpg);
+    margin-top: 0px;
+}
+h1 {
+    text-shadow: 10px 10px #4FFAC6;
+    background-color: rgba(255,255,255,0.85);
+}
+
+
+#navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color:#C8F110;
+    text-align:center;
+    font-family: cursive
+}
+
+.am-gif {
+    width: 700px
+}
+
+#navbar > a{
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 23px;
+    background-color: rgba(255,255,255,0.85);
+    color: blue;
+}
+
+.am-body {
+    background-color:#FFFFF0;
+}
+
+.am-heading2 {
+    color: #3A0E0D;
+    font-size: 60px;
+    font-style: italic;
+    border-radius: 20%;
+}
+
+.am-heading {
+    margin-top: 100px;
+    color: #3A0E0D;
+    text-align: center;
+    font-size: 90px;
+    font-style: italic;
+    border-radius: 20%;
+}
+.am-headings {
+    color:#D77601;
+    font-style: italic;
+    background-color: rgba(255,255,255,0.85);
+    width: 40%;
+    border-radius: 20%;
+    padding: 45px;
+    text-align: center;
+    font-size: large;
+    font-family: sans-serif
+}
+
+.am-body {
+    color: blue;
+    font-size: smaller;
+    font-style: oblique
+}
+
+
+
+.am-images {
+    width: 450px;
+}
+
+.am-description {
+    font-size: 23px;
+    color: #0E6A22;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 20%;
+    padding: 45px;
+
+}
+
+.am-table {
+    width: 75%;
+    border-spacing: 20px;
+}
+
+.am-closing {
+    font-size: 35px;
+    color: #241997;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 20%;
+    padding: 35px;
+    font-family: cursive
+}
+
+.am-Sources-Title {
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 40px;
+    background-color: rgba(255,255,255,0.85);
+    font-family: fantasy;
+}
+.am-Sources {
+    color: blue;
+    display: inline-block;
+    padding: 10px;
+    font-size: 23px;
+    background-color: rgba(255,255,255,0.85);
+}
