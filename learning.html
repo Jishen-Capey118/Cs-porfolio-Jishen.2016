@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>idiot</title>
+    </head>
+    <body id="body">
+        <center>
+            <br>
+            <br>
+            <div id="circle" onclick="toggleChange()" style="width:500px;height:500px;border-radius:50%;background-color:blue"> .</div>
+        </center>
+        <script>
+            element("body").style.backgroundColor = "red";
+            
+            var bodyColors = ["red","yellow","blue"];
+            var circleColors = ["green","purple","orange"];
+            
+            var currentBodyColor = 0;
+            var currentCircleColor = 0;
+            
+            var changing = false
+            var interval
+            
+            function toggleChange () {
+                //constantly changes color
+                if (changing === true){
+                    changing = false
+                    clearInterval(interval)
+                } else {
+                    changing = true
+                    interval = window.setInterval(function(){change()},0.1)
+                }
+            }
+            
+            function change(){
+                //Changes Body Color
+                currentBodyColor = currentBodyColor + 1
+                if (currentBodyColor>2){
+                    currentBodyColor=0
+                }
+                element("body").style.backgroundColor = bodyColors[currentBodyColor]
+                
+                //Change circle color
+                currentCircleColor = currentCircleColor + 1
+                if (currentCircleColor>2){
+                    currentCircleColor=0
+                }
+                element("circle").style.backgroundColor = circleColors[currentCircleColor]
+            };
+            
+            function element(name){
+                return document.getElementById(name);
+            };
+        </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>idiot</title>
+    </head>
+    <body id="body">
+         <input id="input">
+         <button onclick="changeBackgroundColor()">Change Color</button>
+         <script>
+            function changeBackgroundColor(){
+                document.body.style.backgroundColor = document.getElementById("input").value;   
+            }
+         </script>
+    </body>
+</html>
