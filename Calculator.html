@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="styles/Hardware-styles.css" type='text/css'>
+        <style>
+
+        
+            .body {
+                background-image: Url(https://i.ytimg.com/vi/GcUiuqZ1nPg/maxresdefault.jpg);
+            }
+            .heading {
+                font-family:arial;
+                color: purple;
+                
+            }
+            
+        </style>
+    </head>
+    <body class="body">
+        <ul id="navbar">
+            <li><a href="index.html" class="active">About me</a></li>
+            <li><a href="Hardware.html" class="active">Hardware</a></li>
+            <li><a href="howtoblog2.html" class="active">How To</a></li>
+            <li><a href="Calculator.html" class="active">Calculator</a></li>
+            <li><a href="#" class="active">To do List</a></li>
+            <li><a href="#" class="active">Vindinium</a></li>
+            <li><a href="#" class="active">Big Project</a></li>
+        </ul>
+        <h1 class="heading">Calculator</h1>
+        <input id="number" placeholder="enter the first number">
+        <select id="operations">
+          <option value="multiply">* (multiply)</option>
+          <option value="add">+ (add)</option>
+          <option value="subtract">- (subtract)</option>
+          <option value="divide">/ (divide)</option>
+          <option value="exponent">^ (exponent)</option>
+          <option value="Nth root">Nth root</option>
+        </select>
+        <input id="numbers" placeholder="enter the second number">
+         <button onclick="calculate()">Calculate</button>
+         <script>
+            function calculate(){
+                var e = document.getElementById("operations");
+                var operation = e.value;
+                
+                var num1 = Number(document.getElementById("number").value)
+                var num2 = Number(document.getElementById("numbers").value)
+                if(operation === "add"){
+                    alert(num1+num2)
+                }
+                if(operation === "multiply"){
+                    alert(num1*num2)   
+                }
+                if(operation === "subtract"){
+                    alert(num1-num2)
+                }
+                if(operation === "divide"){
+                    alert(num1/num2)   
+                }
+                if(operation === "exponent"){
+                    alert(Math.pow(num1,num2))   
+                }
+                if(operation === "Nth root"){
+                    alert(Math.pow(num1, 1/num2))   
+                }
+            }        
+        </script>
+    </body>
+</html>
