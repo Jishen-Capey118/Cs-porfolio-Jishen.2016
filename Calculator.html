@@ -7,12 +7,24 @@
 
         
             .body {
-                background-image: Url(https://i.ytimg.com/vi/GcUiuqZ1nPg/maxresdefault.jpg);
+                background-image: Url(https://wallpaperscraft.com/image/matrix_numbers_code_background_47399_2048x1152.jpg);
             }
             .heading {
                 font-family:arial;
-                color: purple;
+                color: #295B08;
+                font-size:70px;
+                text-align:center;
                 
+            }
+            .operations {
+                font-size: 40px;
+            }
+            .numbers {
+            font-size: 30px;
+            }
+            .answerdiv {
+                font-size:60px;
+                background-color:yellow;
             }
             
         </style>
@@ -28,8 +40,8 @@
             <li><a href="#" class="active">Big Project</a></li>
         </ul>
         <h1 class="heading">Calculator</h1>
-        <input id="number" placeholder="enter the first number">
-        <select id="operations">
+        <input class="numbers" id="number" placeholder="enter the first number">
+        <select class="operations" id="operations">
           <option value="multiply">* (multiply)</option>
           <option value="add">+ (add)</option>
           <option value="subtract">- (subtract)</option>
@@ -37,8 +49,12 @@
           <option value="exponent">^ (exponent)</option>
           <option value="Nth root">Nth root</option>
         </select>
-        <input id="numbers" placeholder="enter the second number">
-         <button onclick="calculate()">Calculate</button>
+        <input class="numbers" id="numbers" placeholder="enter the second number">
+         <button class="operations" onclick="calculate()">Calculate</button>
+         <br>
+         <center>
+         <div id="answerdiv" class="answerdiv">This is the Answer!</div>
+         </center>
          <script>
             function calculate(){
                 var e = document.getElementById("operations");
@@ -47,24 +63,31 @@
                 var num1 = Number(document.getElementById("number").value)
                 var num2 = Number(document.getElementById("numbers").value)
                 if(operation === "add"){
-                    alert(num1+num2)
+                    document.getElementById("answerdiv").innerHTML = String(num1) + " + " + String(num2) + " = " + (num1+num2)
                 }
                 if(operation === "multiply"){
-                    alert(num1*num2)   
+                document.getElementById("answerdiv").innerHTML = String(num1) + " * " + String(num2) + " = " + (num1*num2)
                 }
                 if(operation === "subtract"){
-                    alert(num1-num2)
+                document.getElementById("answerdiv").innerHTML = String(num1) + " - " + String(num2) + " = " + (num1-num2)
+
                 }
                 if(operation === "divide"){
-                    alert(num1/num2)   
+                document.getElementById("answerdiv").innerHTML = String(num1) + " / " + String(num2) + " = " + (num1/num2)
                 }
                 if(operation === "exponent"){
-                    alert(Math.pow(num1,num2))   
+                document.getElementById("answerdiv").innerHTML = String(num1) + " ^ " + String(num2) + " = " + (Math.pow(num1,num2))   
+
                 }
                 if(operation === "Nth root"){
-                    alert(Math.pow(num1, 1/num2))   
+                 document.getElementById("answerdiv").innerHTML = String(num1) + " Nth root " + String(num2) + " = " + (Math.pow(num1, 1/num2))  
+                                    
                 }
             }        
         </script>
     </body>
+    <center><img src="https://static1.squarespace.com/static/5276cf3ee4b0c0a39480a9ff/t/549b7ecfe4b0df76871a72d3/1419476689563/" alt="Mountain View" style="width:304px;height:228px;">
+</center>
+    <center><img src="https://thumbs.dreamstime.com/t/man-calculator-funny-hand-49408888.jpg" alt="Mountain View" style="width:304px;height:228px;">
+</center>
 </html>
