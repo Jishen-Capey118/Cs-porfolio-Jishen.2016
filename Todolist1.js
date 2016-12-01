@@ -28,7 +28,7 @@ function newElement(inputtext) {
       var div = this.parentElement;
       div.style.display = "none";}}
 }
-
+//things I will use when I am writing
 var stuffToWrite = [
   "Wake Up",
   "idkwhythisdoesntwork",

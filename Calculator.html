@@ -3,6 +3,7 @@
     
     <head>
         <link rel="stylesheet" href="styles/Hardware-styles.css" type='text/css'>
+<!–– The stle element below will be used like a private CSS page--!>
         <style>
 
         
@@ -27,9 +28,13 @@
                 background-color:yellow;
             }
             
+
         </style>
+        <!–- Other elements below were given class names so the Script can identify them-–!>
     </head>
     <body class="body">
+        <!–- Links to connect websites-–!>
+
         <ul id="navbar">
             <li><a href="index.html" class="active">About me</a></li>
             <li><a href="Hardware.html" class="active">Hardware</a></li>
@@ -41,6 +46,8 @@
         </ul>
         <h1 class="heading">Calculator</h1>
         <input class="numbers" id="number" placeholder="enter the first number">
+     <!–-Each Operations will be defined with symbols below-–!>
+
         <select class="operations" id="operations">
           <option value="multiply">* (multiply)</option>
           <option value="add">+ (add)</option>
@@ -55,6 +62,8 @@
          <center>
          <div id="answerdiv" class="answerdiv">This is the Answer!</div>
          </center>
+        <!–-Each operations also can be derived inside a new string in this form: string(num1) + "(symbol)" + string(num2)-–!>
+
          <script>
             function calculate(){
                 var e = document.getElementById("operations");
