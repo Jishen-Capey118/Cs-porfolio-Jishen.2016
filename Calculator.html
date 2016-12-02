@@ -69,9 +69,12 @@
             function calculate(){
                 var e = document.getElementById("operations");
                 var operation = e.value;
-                
+                //Var num 1 represents the first number in a string
                 var num1 = Number(document.getElementById("number").value)
+                //var num 2 represents the second number in a string
                 var num2 = Number(document.getElementById("numbers").value)
+                
+                //Each of the if statements below will take both numbers in strings and use math operations to solve
                 if(operation === "add"){
                     document.getElementById("answerdiv").innerHTML = String(num1) + " + " + String(num2) + " = " + (num1+num2)
                 }
@@ -87,7 +90,7 @@
                 }
                 if(operation === "exponent"){
                 document.getElementById("answerdiv").innerHTML = String(num1) + " ^ " + String(num2) + " = " + (Math.pow(num1,num2))   
-
+                //This is the final Nth root represented by the Math.Pow function(num1, 1/num2)
                 }
                 if(operation === "Nth root"){
                  document.getElementById("answerdiv").innerHTML = String(num1) + " Nth root " + String(num2) + " = " + (Math.pow(num1, 1/num2))  
