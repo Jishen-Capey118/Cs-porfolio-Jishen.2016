@@ -6,7 +6,7 @@ var i;
 function newElement(inputtext) {
     var li = document.createElement("li");
     var inputValue = document.getElementById("myInput").value;
-    //If statement represents how nothing will appear if inputvalue === "" which is nothing
+//If statement represents how nothing will appear if inputvalue === "" which is nothing
     if(inputValue === ""){
         inputValue = inputtext
     }
@@ -26,7 +26,8 @@ function newElement(inputtext) {
   li.appendChild(span);
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
-      var div = this.parentElement;
+      var div = this.parentElement; 
+//parentElement returns null if the parent node is not an element node:
       div.style.display = "none";}}
 }
 //Above the Variable i is set to the number 0. While variable i is less than d.length, repeat this block of code. Add one to variable i.
