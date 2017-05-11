@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="styles/Hardware-styles.css" type='text/css'>
+<!–– The stle element below will be used like a private CSS page--!>
+        <style>
+
+        
+            .body {
+                background-image: Url(https://wallpaperscraft.com/image/matrix_numbers_code_background_47399_2048x1152.jpg);
+            }
+            .heading {
+                font-family:arial;
+                color: #295B08;
+                font-size:70px;
+                text-align:center;
+                
+            }
+            .operations {
+                font-size: 40px;
+            }
+            .numbers {
+            font-size: 30px;
+            }
+            .answerdiv {
+                font-size:60px;
+                background-color:yellow;
+            }
+            
+
+        </style>
+        <!–- Other elements below were given class names so the Script can identify them-–!>
+    </head>
+    <body class="body">
+        <!–- Links to connect websites-–!>
+
+         <ul id="navbar">
+            <li><a href="index.html" class="active">About me</a></li>
+            <li><a href="Hardware.html" class="active">Hardware</a></li>
+            <li><a href="howtoblog2.html" class="active">How To</a></li>
+            <li><a href="Calculator.html" class="active">Calculator</a></li>
+            <li><a href="Todolist.html" class="active">To do List</a></li>
+            <li><a href="howtoblogjava1.html" class="active">How To Calculator</a></li>
+            <li><a href="Vindinium.html" class="active">Vindinium</a></li>
+            <li><a href="#" class="active">Big Project</a></li>
+        </ul>
+        <h1 class="heading">Calculator</h1>
+        <input class="numbers" id="number" placeholder="enter the first number">
+     <!–-Each Operations will be defined with symbols below-–!>
+
+        <select class="operations" id="operations">
+          <option value="multiply">* (multiply)</option>
+          <option value="add">+ (add)</option>
+          <option value="subtract">- (subtract)</option>
+          <option value="divide">/ (divide)</option>
+          <option value="exponent">^ (exponent)</option>
+          <option value="Nth root">Nth root</option>
+        </select>
+        <input class="numbers" id="numbers" placeholder="enter the second number">
+         <button class="operations" onclick="calculate()">Calculate</button>
+         <br>
+         <center>
+         <div id="answerdiv" class="answerdiv">This is the Answer!</div>
+         </center>
+        <!–-Each operations also can be derived inside a new string in this form: string(num1) + "(symbol)" + string(num2)-–!>
+
+         <script>
+            function calculate(){
+                var e = document.getElementById("operations");
+                var operation = e.value;
+                //Var num 1 represents the first number in a string
+                var num1 = Number(document.getElementById("number").value)
+                //var num 2 represents the second number in a string
+                var num2 = Number(document.getElementById("numbers").value)
+                
+                //Each of the if statements below will take both numbers in strings and use math operations to solve
+                if(operation === "add"){
+                    document.getElementById("answerdiv").innerHTML = String(num1) + " + " + String(num2) + " = " + (num1+num2)
+                }
+                if(operation === "multiply"){
+                document.getElementById("answerdiv").innerHTML = String(num1) + " * " + String(num2) + " = " + (num1*num2)
+                }
+                if(operation === "subtract"){
+                document.getElementById("answerdiv").innerHTML = String(num1) + " - " + String(num2) + " = " + (num1-num2)
+
+                }
+                if(operation === "divide"){
+                document.getElementById("answerdiv").innerHTML = String(num1) + " / " + String(num2) + " = " + (num1/num2)
+                }
+                if(operation === "exponent"){
+                document.getElementById("answerdiv").innerHTML = String(num1) + " ^ " + String(num2) + " = " + (Math.pow(num1,num2))   
+                //This is the final Nth root represented by the Math.Pow function(num1, 1/num2)
+                }
+                if(operation === "Nth root"){
+                 document.getElementById("answerdiv").innerHTML = String(num1) + " Nth root " + String(num2) + " = " + (Math.pow(num1, 1/num2))  
+                                    
+                }
+            }        
+        </script>
+    </body>
+    <center><img src="https://static1.squarespace.com/static/5276cf3ee4b0c0a39480a9ff/t/549b7ecfe4b0df76871a72d3/1419476689563/" alt="Mountain View" style="width:304px;height:228px;">
+</center>
+    <center><img src="https://thumbs.dreamstime.com/t/man-calculator-funny-hand-49408888.jpg" alt="Mountain View" style="width:304px;height:228px;">
+</center>
+</html>

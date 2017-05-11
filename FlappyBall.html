@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            
+        </style>
+
+    </head>
+    <body>
+        <canvas id="canvas" width="100px" height="300px" onmousedown='down()'></canvas>
+        <script>
+        var canvas = document.getElementById("canvas")
+        var ctx = canvas.getContext("2d")
+        
+        var ballheight = 150
+        
+        function tick(){
+            ballheight = ballheight + gravity
+            gravity = gravity + .2
+            ctx.beginPath();
+            ctx.arc(50,ballheight,20,0,2*Math.PI);
+            ctx.clearRect(0,0,1000,300)
+            ctx.stroke();
+            window.requestAnimationFrame(tick)
+        }
+        var gravity = 0
+        tick()
+        
+        function onmousedown(){
+            
+        }
+
+        function onmouseup(){
+            
+        }
+        window.onkeydown = function(e) {
+            var evt = e || window.event;
+            var elem = evt.target || evt.srcElement;
+            if(e.keyCode == 32 && elem.nodeName.toUpperCase() === "BODY") {
+                onmousedown = true;
+            }
+        };
+
+        
+        </script>
+    </body>
+</html>

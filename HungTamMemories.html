@@ -1,0 +1,90 @@
+//Game Grid - Each item corresponds to an image on the displayed grid
+var grid = [
+    ["xx","xx","xx","xx"],
+    
+    
+    ["xx","xx","xx","xx"],
+    
+    
+    ["xx","xx","xx","xx"],
+    
+    
+    ["xx","xx","xx","xx"],
+]
+
+//Object that assigns each grid item to an image. Used when drawing.
+var imageAssignment={
+    RI:"https://i.ytimg.com/vi/0WFYuS6r1ZI/maxresdefault.jpg",
+    SC:"https://i.ytimg.com/vi/YdfZ1uPr12c/hqdefault.jpg",
+    TE:"http://modernliberals.com/wp-content/uploads/2017/03/Trump_eats.jpg",
+    PO:"https://i.ytimg.com/vi/SiUYlm7M6vc/maxresdefault.jpg",
+    YG:"https://i.ytimg.com/vi/riJRODogRVI/maxresdefault.jpg",
+    CO:"https://classracegender.files.wordpress.com/2012/05/yo-yo_ma_-_world_economic_forum_annual_meeting_davos_20081.jpg",
+    CM:"http://extras.mnginteractive.com/live/media/site568/2016/0625/20160625_083009_GREEN_300.jpg",
+    VD:"https://yt3.ggpht.com/-GAYDn37vlLU/AAAAAAAAAAI/AAAAAAAAAAA/Og_eMIgmlwk/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+}
+
+//A constant that is shuffled then laid out onto each item on the grid. 
+var VALUES = ["RI","SC","TE","PO","YG","CO","CM","VD","RI","SC","TE","PO","YG","CO","CM","VD"];
+
+//CREDIT TO STACKOVERFLOW
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+VALUES = shuffle(VALUES);
+
+//CREDIT TO JISHEN
+var increment = 0;
+for(var r = 0; r < grid.length; r++){
+    for(var c = 0; c < grid[0].length; c++){
+        grid[r][c] = VALUES[increment];
+        increment++;
+    }
+}
+
+var onFirstClick = true;
+var lastClicked = [0,0];
+var clickable = true;
+
+//Detects which thing was clicked.
+function clicked(r, c){
+    if(clickable){
+        var card = grid[r][c];
+        var url = imageAssignment[card];
+        document.getElementById(r + "," + c).style.backgroundImage = "url('" + url + "')";
+        if(onFirstClick === true){
+            lastClicked = [r,c];
+            onFirstClick = false;
+            clickable = true;
+        }
+
+        else {
+            var lastLetters = grid[lastClicked[0]][lastClicked[1]]
+            var currentLetter = grid[r][c]
+            clickable = false;
+            if(lastLetters != currentLetter){
+                setTimeout(function(){
+                    document.getElementById(r + "," + c).style.background = "white";
+                    document.getElementById(lastClicked[0] + "," + lastClicked[1]).style.background = "white"
+                    clickable = true;
+                },1000)
+            }
+            onFirstClick = true;
+        }    
+    }
+}

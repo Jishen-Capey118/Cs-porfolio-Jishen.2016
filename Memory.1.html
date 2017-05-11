@@ -1,0 +1,382 @@
+<!DOCTYPE html >
+<link href="Memory.css" rel="stylesheet" type="text/css">
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <title>Memory Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Open Sans, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        }
+        
+        
+        table {
+            margin: 0 auto;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: lavender;
+        }
+        
+        li a {
+            display: block;
+            color: lavender;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        
+        li {
+            text-align: center;
+        }
+        
+        li:last-child {
+            border-bottom: none;
+        }
+        
+        li a.active {
+            background-color: #4CAF50;
+            color: lavender;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: darkslategrey;
+            color: lavender;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <ul>
+      
+
+        </ul>
+
+    </nav>
+    <script type="text/javascript">
+        (function() {
+
+            var bodyEl = $('body'),
+                navToggleBtn = bodyEl.find('.nav-toggle-btn');
+
+            navToggleBtn.on('click', function(e) {
+                bodyEl.toggleClass('active-nav');
+                e.preventDefault();
+            });
+        })();
+    </script>
+    
+    
+    
+            <script>
+    checkme(prompt("what is your first name (first letter must be caps)"))
+        function checkme(name){
+    if (name==="Kenson"){
+        alert("Intelligence Level 6")
+            }
+    if (name==="Andrew"){
+        alert("Thanks for Loaning me money!")
+            }
+    if (name==="William"){
+                alert("You are a Great Physicist!")
+            }
+    if (name==="Julian"){
+                alert("Ouch that hurt!")
+            }
+    if (name==="Tyler"){
+                alert("Ouch that hurt!")
+            }
+    if (name==="Tam"){
+                alert("Poor Kenson")
+            }
+    if (name==="Vinh"){
+                alert("Why take your mask off when a new Chainsmokers single is coming to town")
+            }
+    else if(name==="Hung Tam"){
+                alert("Programming 24/7 must be fun")
+            }
+    else if(name==="Monica"){
+                alert("Kawaii!!!")
+            }
+    else if(name==="Jesus"){
+                alert("Y'all better start praying")
+            }
+    else if(name==="Andy"){
+            alert("You are a Great Artist")
+            }
+
+    else if(name==="Jishen"){
+                alert("Nice program dude")
+            }
+    else if(name==="Angel"){
+                alert("What's Shakin Bacon")
+            }
+    else if(name==="Jaden"){
+                alert("Walkin Talin Coconut")
+            }
+    else if(name==="Gabe"){
+                alert("GabeCorn all day everyday")
+            }
+    else if(name==="Gabriel"){
+                alert("Even if you're a Big Boy, you can still Jiggy with it!")
+            }
+    else if(name==="Rammy"){
+                alert("Lucario OP")
+            }
+    else if(name==="Aakash"){
+                alert("Steph Curry or something")
+            }
+    else if(name==="Matthew"){
+                alert("Gonna Bake me a cake or something")
+            }
+    else if(name==="Miguel"){
+                alert("Share your mixtape sometime please")
+            }
+    else if(name==="Ian"){
+                alert("Let us Debate Trump 2K20 or not")
+            }
+    else if(name==="Francisco"){
+                alert("What kind of Hairline is that")
+            }
+    else if(name==="John"){
+                alert("Love that Jawline")
+            }
+    else if(name==="Ms. Windsor"){
+                alert("Cook for me honey")
+            }
+    else if(name==="Jacob"){
+                alert("Baecob!!!")
+            }
+    else if(name==="Ryan"){
+                alert("I'm so enGAGEd!!!")
+            }
+    else if(name==="Xavier"){
+                alert("Que Pasa Javier aka Chicharito")
+            }
+    else if(name==="Mr. Ebrahim"){
+                alert("There is never too much food..")
+            }
+    else if(name==="Gavin"){
+                alert("What's a Grino")
+            }
+            
+    else if(name==="Harish"){
+                alert("You are a GOD at Ball")
+            }
+    else if(name==="Mr. Hesby"){
+                alert("Greatest Programming Teacher")
+            }
+    else {
+                alert("Beautiful name")
+            }
+        }
+        var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+        var memory_values = [];
+        var memory_tile_ids = []; 
+        
+</script>
+
+
+
+
+</body>
+
+<style>
+    
+    table {
+        border: 3px solid white;
+        padding: 5px;
+    }
+    
+    table tr td {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    padding: 20px;
+    border-spacing: 20px;
+    }
+    
+    body {
+        background:  blue;
+    }
+    
+    .smaller-image {
+        width: 200px;
+    }
+    
+    .medium-image {
+        width: 300px;
+    }
+    
+    .darkslategrey-text {
+        color: darkslategrey;
+    }
+    
+    img {
+        background: lavender;
+        border: 5px darkslategrey;
+    }
+    
+    .alignright {
+        float: right;
+    }
+    
+    div {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+    }
+    
+    p {
+        padding: 5px;
+    }
+    
+    #hardwarePlanImg {
+        height: 250px;
+        -ms-transform: rotate(90deg);
+        /* IE 9 */
+        -webkit-transform: rotate(90deg);
+        /* Chrome, Safari, Opera */
+        transform: rotate(90deg);
+    }
+</style>
+</body>
+
+<body style="text-align:center">
+
+    <h1 class="darkslategrey-text" align="center"> Memory Game </h1>
+
+<center>
+<table>
+
+
+
+
+        <script>
+    checkme(prompt("what is your first name (first letter must be caps)"))
+        function checkme(name){
+    if (name==="Andrew"){
+        alert("Thanks for Loaning me money!")
+            }
+    else if (name==="Kenson"){
+                alert("Intelligence Level 6")
+            }
+    else if (name==="William"){
+                alert("You are a Great Physicist!")
+            }
+    else if (name==="Julian"){
+                alert("Hook me up with an AK-47!")
+            }
+    else if (name==="Tyler"){
+                alert("Ouch that hurt!")
+            }
+    else if (name==="Tam"){
+                alert("Poor Kenson")
+            }
+    else if (name==="Vinh"){
+                alert("Some made it a hot line, you made it a hot song!")
+            }
+    else if(name==="Hung Tam"){
+                alert("Programming 24/7 must be fun")
+            }
+    else if(name==="Monica"){
+                alert("Taiga!!!")
+            }
+    else if(name==="Jesus"){
+                alert("Y'all better start praying")
+            }
+    else if(name==="Andy"){
+            alert("You are a Great Artist")
+            }
+
+    else if(name==="Jishen"){
+                alert("Nice program dude")
+            }
+    else if(name==="Angel"){
+                alert("What's Shakin Bacon")
+            }
+    else if(name==="Jaden"){
+                alert("Walkin Talkin Coconut, Brown on the outside White in the inside!")
+            }
+    else if(name==="Gabe"){
+                alert("GabeCorn all day everyday")
+            }
+    else if(name==="Gabriel"){
+                alert("Even if you're a Big Boy, you can still Jiggy with it!")
+            }
+    else if(name==="Rammy"){
+                alert("Lucario OP")
+            }
+    else if(name==="Aakash"){
+                alert("Steph Curry or something")
+            }
+    else if(name==="Matthew"){
+                alert("Gonna Bake me a cake or something")
+            }
+    else if(name==="Miguel"){
+                alert("Is that Miguel or is that Messi")
+            }
+    else if(name==="Juan"){
+                alert("Juan... Juan Mata, what's the difference")
+            }
+    else if(name==="Ian"){
+                alert("Let us Debate Trump 2K20 or not")
+            }
+    else if(name==="Francisco"){
+                alert("What kind of Hairline is that")
+            }
+    else if(name==="John"){
+                alert("Love that Jawline")
+            }
+    else if(name==="Ms. Windsor"){
+                alert("Cook for me honey")
+            }
+    else if(name==="Jacob"){
+                alert("Baecob!!!")
+            }
+    else if(name==="Ryan"){
+                alert("I'm so enGAGEd!!!")
+            }
+    else if(name==="Xavier"){
+                alert("If Xavier=Javier, then Xavier=Chicharito")
+            }
+    else if(name==="Mr. Ebrahim"){
+                alert("There is never too much food..")
+            }
+    else if(name==="Gavin"){
+                alert("What's a Grino")
+            }
+            
+    else if(name==="Harish"){
+                alert("You are a GOD at Ball")
+            }
+    else if(name==="Mr. Hesby"){
+                alert("Greatest Programming Teacher")
+            }
+    else {
+                alert("Beautiful name")
+            }
+        }
+        var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+        var memory_values = [];
+        var memory_tile_ids = []; 
+        
+</script>

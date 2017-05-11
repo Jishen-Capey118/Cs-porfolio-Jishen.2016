@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memory Game</title>
+    <style>
+    #canvas {
+    	display: block;
+    	border: 1px solid green;
+    	margin: 50px auto;
+    
+    }
+    </style>
+</head>
+
+
+<body>
+    <center>
+    <canvas id="canvas" width="200" height="900"
+    style="border:1px solid #289202;">
+    </canvas>
+    </center>
+     <script>
+
+    // Some basic canvas stuff. Here we'll make a variable for the canvas and then initialize its 2d context for drawing
+    var canvas = document.getElementById("canvas"),
+    		ctx = canvas.getContext("2d");
+    // Now setting the width and height of the canvas
+    var W = 50;
+    var H = 50;
+    var ballheight = 0.5*canvas.height
+    function drawball (){
+    ctx.beginPath();
+    ctx.arc(10,10,50,0,2*Math.PI);
+    ctx.stroke();
+    }
+    
+    
+    // Applying these to the canvas element
+    canvas.height = H; canvas.width = W;
+    function maintick(){
+        drawball()
+        window.requestAnimationFrame(maintick);
+    }
+    
+    maintick()
+    
+</script>
+</body>
+</html>
