@@ -20,57 +20,73 @@
 <h1 class="am-heading">- Guide To A Simple Gravity Ball Game -</h1>
 <center>
 
-<div class="am-headings"><h1>What is Vindinium???</h1>
-<h2>"Vindinium can be defined as a game where one can code AI's and put them in a battle against many other bots. The simple goal of the game is to get more gold pieces than all the other bots. Your bot will gain gold during each turn accordingly with how many mines you have, for example, if you have 5 mines every turn you'll get 5 more gold pieces. However, others can also steal your mines. This is done either by simply going to a bot's mine and taking it, or by killing the owner of the mine. If you are killed you will lose all your mines and the mines will go to that of killer's ownership. Also, if each bot has around 100 health, attacking another mine mine will remove 20 from one's health, and so will attacking another bot. Additionally, each turn you will lose one health. To heal yourself without dying you must go to a tavern. You can pay 2 gold at a tavern in order to be healed for 50 health. That's the basic gist of the game!"</h2></div>
+<div class="am-headings"><h1> How does this game work??? </h1>
+<h2>"(Add)"</h2></div>
         
 <center><br>
-<img class="am-gif" src="images/Vindinium1.png">
+<img class="am-gif" src="images/FirstFlap.png">
 </center>
-<div class="am-head"><h1>Parts of Entire code:</h1></div>
+<div class="am-head"><h1>Parts of code:</h1></div>
 
 
 <table class= "am-description">
 <div class="am-description"><h1 class="am-heading2">Part 1 of Code:</h1 class="am-heading2">
 <center>
-<img src="images/Vindiniumcode5.png" alt="some_text" style="width:width;height:height;">
+<img src="images/FlappyStart.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">This section was given to me already coded, so I'll explain lines 3-7, which I did use. These lines basically tell us the same thing, except for the fact that lines 3-5 are commented out. The random string first in the parentheses is my bot's code, which means that you could take it and use my bot. The training/arena part determines whether or not my bot pretty much just tests for if it crashes (training) or runs if it against other bots (arena). Lastly, the http://vindinium.org determines if my bot runs against the main Vindinium server (vindinium.org) or a private server for this class (v.summitdevclub.com:9000).
+<div class= "am-headings">(Add)
 </div>
 
-<br><div class="am-description"><h1 class="am-heading2">Global Data:</h1 class="am-heading2">
+<br><div class="am-description"><h1 class="am-heading2">Frame of Game:</h1 class="am-heading2">
 <center>
-<img src="images/Vindiniumcode6.png" alt="some_text" style="width:width;height:height;">
+<img src="images/FlappyStart2.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">This shows the introduction of the Global Data section and writes myDir. There is a variable made called myPos which holds the x and y coordinates of my bot. Then Lines 29-35 This enemy bots array determines who the enemies are by asking if my bot is enemy bot 1, then going down the line. It then concatenates the enemy bots into an array called enemyBots so that it can be accessed later all together. This code makes an array for all of the mines called allMines. It has the position of the enemy mines in the lines 31, 32, 33, and 34. This code determines where the closest player is. This is used with other code (described later) to attack other players. </div>
+<div class= "am-headings">(Add)</div>
 
 <br>
-<div class="am-description"><h1 class="am-heading2">Part 2 of Code:</h1 class="am-heading2">
+<div class="am-description"><h1 class="am-heading2">Variables:</h1 class="am-heading2">
 <center>
-<img src="images/Vindiniumcode7.png" alt="some_text" style="width:width;height:height;">
+<img src="images/FlappyStart3.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings"> My code then looks for someone to attack and steal their mines. In this case, my bot is looking for the person who has more mines than everybody else, and then my bot will attempt to attack them and take their mines. It does that by first going through an if/else statement (lines 63-84) where it uses inequalities to check who has more mines that others, then changing a variable, ""target,"" to the coordinates of the bot that has more mines than others. Another variable is also, "attack,". If the person who has the most mines only has one mine, attack will equal to false, as it is not worth going after that person if it is only for one mine. Also if two people are tied for most mines, the attack will equal to false as well. To do this my if/else statement which tells my bot what direction it should go by adding another else if condition where if bot[target].life + 20 is less than bot.yourBot.life and attack = true. Then it will find the path to the bot with the most mines. Finally, if there is nothing else to do my bot will then just go towards the nearest taken mine and attempt to take control of it. It does this using a very similar for loop to the free mines one, except for taken mines, and simply just finds the path to the nearest taken mine if none of the other conditions are met, so if my health is not critical, there are no free mines to take, and there isn't a good opportunity to kill another bot for their mines, I will instead just work on stealing the opponents' mines.</div>
+<div class= "am-headings">(Add)</div>
 
 <br>
-<div class="am-description"><h1 class="am-heading2">What to Do:</h1 class="am-heading2">
+<div class="am-description"><h1 class="am-heading2">First Function:</h1 class="am-heading2">
 <center>
-<img src="images/Vindiniumcode8.png" alt="some_text" style="width:width;height:height;">
+<img src="images/FlappyStart4.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">My bot first checks its own life (shown in line 87) to see whether or not it needs to go to a tavern to heal up. The life I set it to go to a tavern is below or equal to 65, because in gaming 65 has always been my lucky number. This is done by having a for loop that takes an array of all the taverns, and uses an if statement to change the value of the variable nearTav to whatever the coordinates of the closest tavern is. It then goes through an if/else statement which first checks for a condition where bot.yourBot.life is less than or equal to 65, and if that is true. it takes the coordinates from the for loop and goes there using bot.findPath. After that when it makes sure its life is not in danger, it goes towards the nearest free mine to take for itself. This is done similarlly to the tavern function, except in the for loop it takes in an array of all the free mines rather than the taverns. Then in the same if/else statement, another else if statement is added where the condition is that bot.yourBot.life is more than 65 and bot.freeMines.length more than 0, and if that is true then the bot will go towards the nearest free mine. What bot.freeMines.length more than 0 does in the conditions is that if there are no more free mines, the bot won't look for a free mine</div>
+<div class= "am-headings">(Add)</div>
 
 <br>
-<div class="am-description"><h1 class="am-heading2">How to Do what code does:</h1 class="am-heading2">
+<div class="am-description"><h1 class="am-heading2">If Statements:</h1 class="am-heading2">
 <center>
-<img src="images/Vindiniumcode9.png" alt="some_text" style="width:width;height:height;">
+<img src="images/FlappyStart5.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">This picture begins with the title of the How-to-do-it section. It also includes the freeMines task in an if statement. It says that if freeMines are running, then find the closest free mine and taken mine. It then compares the two and if the nearest taken mine is closer than the nearest free mine, it changes that to closestMine. Then it sends the bot to that position and makes the console (the description when you can't see the tv of the game) say, "Claiming a Mine!" This code basically says that if the task from the what-to-do section was "attack" it runs this. It sets myDir on the path towards the closest player, which was found in the closestPlayer array in the global data section. Then, it says, "Attacking!" in the console. 
+<div class= "am-headings">(Add)
+</div>
+
+<br>
+<div class="am-description"><h1 class="am-heading2">Creating the Ball:</h1 class="am-heading2">
+<center>
+<img src="images/FlappyStart6.png" alt="some_text" style="width:width;height:height;">
+</center>
+<div class= "am-headings">(Add)
+</div>
+
+<br>
+<div class="am-description"><h1 class="am-heading2">Mouse Clicking:</h1 class="am-heading2">
+<center>
+<img src="images/FlappyStart7.png" alt="some_text" style="width:width;height:height;">
+</center>
+<div class= "am-headings">(Add)
 </div>
 
 <br>
 <div class="am-description"><h1 class="am-heading2">What I learned:</h1 class="am-heading2">
 <center>
-<img src="images/Vindiniumcode10.png" alt="some_text" style="width:width;height:height;">
+<img src="https://www.austerenergy.com.br/wp-content/uploads/2016/03/mudancas-de-habito-podem-garantir-beneficios-na-eficiencia-energetica-img-03.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">This was quite a tricky project for me, especially the first couple days. On the first day, I had absolutely no idea what I was doing and I was super confused, even when people explained how to do things. I first started understanding how it worked after our intellectual teacher, Mr. Hesby, did the attack function on the board and people could follow along and leard from what he was writing. This was very informative for me because I began to understand how the three sections could work together and how most of the sections (going to taverns, mines, or attacking people) aren't that different from each other. I don't and didn't really know what I wanted my bot to do, mostly because I didn't understand Vindinium at first, but once I understood a little, I knew that I surely had to make my bot be able to go to taverns, free mines, enemy mines, and to attack other players. I remember wanting my bot to be able to go to enemy mines, and I eventually learned how and did it, after some effort. As of right now I am feeling really satisfied with my bot, especially because of that fact that my bot can easily outmaneuver other bots (created by individuals such as Hung Tam and Kenson) that required over 5 times more time and effort to function than my bot!!!  
+<div class= "am-headings">(Talk about how Matching Was Trashed!)
 </div>
 
 </table>
