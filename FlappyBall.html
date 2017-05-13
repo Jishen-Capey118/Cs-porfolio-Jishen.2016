@@ -2,48 +2,121 @@
 <html>
     <head>
         <style>
-            
-        </style>
+           #rules{
+               color:green;
+               display: inline-block;
+               font-style: serif;
+               font-size: 19px;
+           } 
+           #yes{
+               color:Black;
+               font-size:18px;
+           }
 
+        </style>
     </head>
-    <body>
-        <canvas id="canvas" width="100px" height="300px" onmousedown='down()'></canvas>
+    
+    
+    <center><p id="rules">Click in the center and keep the ball afloat, don't let the lines hit the ball!</p></center><body>
+        
+<center>
+        <canvas id="canvas" width="100px" height="300px" onmouseup="up()" onmousedown='down()'></canvas>
+        <div id = "score">0</div>
+        
+        <input id="yes" type="button" value="Restart" onClick="window.location.reload()">
         <script>
+    
+    
         var canvas = document.getElementById("canvas")
         var ctx = canvas.getContext("2d")
-        
+        var mousedown = false;
         var ballheight = 150
+        var lineA = 50
+        var lineB = 250
+        var lineBy = 2
+        var lineAy = 2
+        var difficulty = 1
+        var score = 0
+
         
         function tick(){
             ballheight = ballheight + gravity
-            gravity = gravity + .2
+            lineA = lineA + lineAy
+            lineB = lineB + lineBy
+            difficulty = difficulty + 0.1
+            score = score + 100
+            
+            document.getElementById("score").innerHTML = score
+            
+            if(lineA > 100 + difficulty){
+                lineAy = lineAy * -1
+                
+            }
+            
+            if(lineA < 5){
+                lineAy = lineAy * -1
+                
+            }  
+            
+            if(lineB < 250 - difficulty){
+                lineBy = lineBy * -1
+                
+            }
+            if(lineB > 295){
+                lineBy = lineBy * -1
+                
+            }  
+            
+            if(mousedown === true){
+                gravity = gravity - .2
+            }
+            else {
+                gravity = gravity + .2
+            }
+            
+    
             ctx.beginPath();
             ctx.arc(50,ballheight,20,0,2*Math.PI);
             ctx.clearRect(0,0,1000,300)
             ctx.stroke();
+            ctx.fillRect(0,lineA,100,2)
+            ctx.fillRect(0,lineB,100,2)
+            if (ballheight<lineA){
+                kill()
+            }
+            if (ballheight>lineB){
+                kill()
+            }
+            
             window.requestAnimationFrame(tick)
         }
         var gravity = 0
         tick()
+    
         
         function down(){
-            
+            mousedown = true
         }
 
         function up(){
-            
+            mousedown = false
         }
-        var mousedown
 
-        window.onkeydown = function(e) {
-            var evt = e || window.event;
-            var elem = evt.target || evt.srcElement;
-            if(e.keyCode == 32 && elem.nodeName.toUpperCase() === "BODY") {
-                onmousedown = true;
-            }
-        };
-
+function accelerate(n) {
+    myGamePiece.gravity = n;
+}
         
+var myGamePiece;
+var myObstacle;
+
+
+function updateGameArea() {
+    myGameArea.clear();
+    myObstacle.update();
+    myGamePiece.newPos();
+    myGamePiece.update();
+}
+
         </script>
     </body>
 </html>
