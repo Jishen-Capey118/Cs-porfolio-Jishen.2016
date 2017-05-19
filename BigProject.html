@@ -21,12 +21,12 @@
 <center>
 
 <div class="am-headings"><h1> How does this game work??? </h1>
-<h2>"This is a simple Gravity Ball game made with Html, Css, and JavaScript. In this game one is able to control a..."</h2></div>
+<h2>"This is a simple Gravity Ball game made with Html, Css, and JavaScript. In this game one is able to control a ball that is impacted by Gravity by clicking on a canvas to make the ball height rise. If one isn't clicking at all, then the ball will fall due to Newton's Law of Universal Gravitation. The goal of the game is to keep the ball from touching the dangerous lines for as long as possible or else the game ends. As of today no other human has come close to reaching my high score of 163,000! </h2> <h2> Warning: To some this game may be annoying, it may cause aggression, and it may become rather tedious due to rage quits. :)"</h2></div>
         
 <center><br>
 <img class="am-gif" src="images/FirstFlap.png">
 </center>
-<div class="am-head"><h1>Parts of code:</h1></div>
+<div class="am-head"><h1>Parts of code Without Comments:</h1></div>
 
 
 <table class= "am-description">
@@ -34,35 +34,36 @@
 <center>
 <img src="images/FlappyStart.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">(Add)
+<div class= "am-headings">For this part of the code, I used a style tag which was used to define style information on my HTML page. In other words I can embed Style Sheets within the HTML page. Basically, I assigned certain Id's to certain elements and this part can act like a CSS page within the HTML page so that I would be able to make changes to texts, buttons, background images, and etc.   
 </div>
 
 <br><div class="am-description"><h1 class="am-heading2">Frame of Game:</h1 class="am-heading2">
 <center>
 <img src="images/FlappyStart2.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">(Add)</div>
+<div class= "am-headings"> Here I first started off with a paragraph tag to type up the instructions for the game. Then I constructed a Canvas without content for now, so when the mouse is up or down it's telling the computer what to do when the canvas is clicked. I also added dimensions for the canvas, because it is frame for the game itself. I also used an input tag to create a simple button that realoads the page when clicked on. Notice how both of these tags on this page have id ="...", that is what is used for the < styles> part to change the texts.
+</div>
 
 <br>
 <div class="am-description"><h1 class="am-heading2">Variables:</h1 class="am-heading2">
 <center>
 <img src="images/FlappyStart3.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">(Add)</div>
+<div class= "am-headings">A variable is a value that can change, depending on conditions or information passed onto the program. Different Variables can be assigned different roles, but it's really me that is telling the program these roles. For example in the code var Canvas.GetElementById ("canvas"), the getElementById() method returns the element that has the ID attribute with the specified value. An example of a condition in the code would be var mousedown= false;, because depending on whether a user clicks up or down, this condition changes based on the variable that I assigned. Finally, for the code to work I also realized that I would need variables for the ballheight, LineA (top line) Line B (Bottom Line), LineAy and LineBy for when I draw the ball on ball height, var difficulty, var score, var gravity are both going to change with each loop (which I'll explain later). </div>
 
 <br>
 <div class="am-description"><h1 class="am-heading2">First Function:</h1 class="am-heading2">
 <center>
 <img src="images/FlappyStart4.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">(Add)</div>
+<div class= "am-headings">Now I created a function tick which also contains another function tick near the end of this code so that this function will run, see function tick withing itself, which means it will constantly loop over and over again. This is how my game will work. Now I set ballheight equal to ballheight plus gravity (which is constantly changing because of a condition set later in the code). Also Lines A and B added to Line Ay/ Line By, so that the values are constantly changing with each loop. The same thing goes with difficulty which will be added or subtracted to my lines later on to make the game more challenging by changing the heights of my lines more rapidly as the game loops. With score I took Score which = 0, and added it to Score + 100, because by doing so I am constantly adding 100 to score for each loop that passes by. </div>
 
 <br>
 <div class="am-description"><h1 class="am-heading2">Conditions:</h1 class="am-heading2">
 <center>
 <img src="images/FlappyStart5.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">(Add)
+<div class= "am-headings">As stated before, I created if statements that would not only set limits to my lines, but also put my variables to work based on the conditions I set. So, first if Line A is > 100 + difficulty this means that the line Ay is multiplied by -1 which means the line changes directions. Also if Line A's height is < 5 then I the line will change directions again. With line B is the height is < 250, the line will change directions and if it's > 295 it will change directions again. Note that the lines are constantly changing which makes the game much more challenging and fun. Finally, I set an if statement where if the program recognizes mousedown, the code will add Gravity which equals Gravity + or - .2, because Gravity isn't constant, throughout the game it changes and depending on the balls height Gravity changes. This corresponds with the game if , for example, If I click and the ball's height is super high, then all of a sudden let go (mouse up) the program will recognize this and the ball will fall faster because there is more Gravity which will make it harder to get the ball's height back up.
 </div>
 
 <br>
@@ -70,7 +71,7 @@
 <center>
 <img src="images/FlappyStart6.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">(Add)
+<div class= "am-headings"> By using Ctx I was able to draw my Ball and set its dimensions such as it radius, its height, its width and etc.... I also added conditions where if ball height is < line A or > line B a function known as kill will be called. However, I just threw this function in out of nowhere, it actually never exists in this code, because I never defined what kill is. Therefore, by call a function that isn't in existence, the game crashed and needs to be reloaded. Near the end of this code, I also used window.requestionAnimationFrame(tick) which simply slows down each time the tick function loops. As I stated before, the Tick function is in the the brackets of the first tick function, because this is what will allow this game to loop over and over again! 
 </div>
 
 <br>
@@ -78,15 +79,15 @@
 <center>
 <img src="images/FlappyStart7.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">(Add)
+<div class= "am-headings">With the rest of this code, the computer can differentiate between whether my mouse is clicked down or if it is clicked up. The program now knows when I click down, the ball will rise and when I release the ball will fall. Gravity impacts this ball, and it is consistently changing. 
 </div>
 
 <br>
 <div class="am-description"><h1 class="am-heading2">What I learned:</h1 class="am-heading2">
 <center>
-<img src="https://www.austerenergy.com.br/wp-content/uploads/2016/03/mudancas-de-habito-podem-garantir-beneficios-na-eficiencia-energetica-img-03.png" alt="some_text" style="width:width;height:height;">
+<img src="images/Learned.png" alt="some_text" style="width:width;height:height;">
 </center>
-<div class= "am-headings">(Talk about how Matching Was Trashed!)
+<div class= "am-headings">I learned something new about being sucessful during this Project, because in the beginning I spent a lot of time biting off too much I could chew. I kept trying to build a matching game, but the truth is I am not at that level of programming yet. I was able to create a grid and and array with each of the letters, and I was able to get each boxes to flip, but from there I needed a ton of help from others, and I decided that in order for me to figure out how to do things by myself and how to learn I needed to do something else, otherwise I wouldn't learn much. That's why I decided to work harder on my own on this simple game. At first I felt that this game was too simple, because my peers were making their own complex games that make my game look like nothing at all. However, I learned that I should stick to what I know more than trying to bite off too much I could chew. 
 </div>
 
 </table>
@@ -99,19 +100,19 @@
 </br></center>
 <center>
 <center>
-<img src="images/FlapEnd1.png" alt="some_text" style="width:width;height:height;">
+<img src="images/FlappyEnding1.png" alt="some_text" style="width:width;height:height;">
 </center>
 
 <center>
-<img src="images/FlapEnd2.png" alt="some_text" style="width:width;height:height;">
+<img src="images/FlappyEnding2.png" alt="some_text" style="width:width;height:height;">
 </center>
 
 <center>
-<img src="images/FlapEnd3.png" alt="some_text" style="width:width;height:height;">
+<img src="images/FlappyEnding3.png" alt="some_text" style="width:width;height:height;">
 </center>
 
 <center>
-<img src="images/FlapEnd4.png" alt="some_text" style="width:width;height:height;">
+<img src="images/FlappyEnding4.png" alt="some_text" style="width:width;height:height;">
 </center>
 
 <br><center>

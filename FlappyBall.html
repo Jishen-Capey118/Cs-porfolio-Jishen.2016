@@ -33,18 +33,24 @@
     
 //Variables for the game var canvas stores an HTML element
         var canvas = document.getElementById("canvas")
-//CTX is like is used to manipulate the canvas
+//CTX is used to manipulate the canvas
         var ctx = canvas.getContext("2d")
 //Changes to true or false when clikced on canvas
         var mousedown = false;
 //Y value of the ball is when we choose to draw the ball on ball height
         var ballheight = 150
+//changing line heights by adding or subtracting LineAy or Line By
         var lineA = 50
         var lineB = 250
         var lineBy = 2
         var lineAy = 2
+//Difficulty changes by adding itself to line heights which changes with loops
         var difficulty = 1
+//Score is 0, because it there's no 1 number for score, it's constantly changing by adding during every loop        
         var score = 0
+//Gravity isn't consistent
+        var gravity = 0
+
 
 //Function that loops over and over gain
         function tick(){
@@ -79,7 +85,6 @@
                 
             }  
             
-            
 //If mousedown is true we add to Gravity which makes ball go up Gravity is constantly changing 
             if(mousedown === true){
                 gravity = gravity - .2
@@ -109,7 +114,6 @@
 //this tick calls itself by running itself over and over again, Javascrtipy will tke Window. requestion Animation Frame(tick) and it slows down after it's called
             window.requestAnimationFrame(tick)
         }
-        var gravity = 0
         tick()
     
 //When I click down ball rises,
