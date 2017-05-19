@@ -2,6 +2,7 @@
 <html>
     <head>
         <style>
+  /* override id tag sets in css for this page only*/
            #rules{
                color:green;
                display: inline-block;
@@ -9,27 +10,34 @@
                font-size: 19px;
            } 
            #yes{
-               color:Black;
+               color:black;
                font-size:18px;
            }
 
         </style>
     </head>
     
-    
-    <center><p id="rules">Click in the center and keep the ball afloat, don't let the lines hit the ball!</p></center><body>
+<!-- One and Only Rule at top-->
+    <center><p id="rules">Click or hold your mouse down in the center of the canvas and keep the ball afloat, don't let the lines hit the ball!</p></center><body>
         
 <center>
+<!-- This is the Canvas without content for now when the mouse is up or down it's telling it what to do when canvas is clicked-->
         <canvas id="canvas" width="100px" height="300px" onmouseup="up()" onmousedown='down()'></canvas>
+
+<!-- Div to start the Score-->
         <div id = "score">0</div>
-        
+
+<!-- A Reload page button-->
         <input id="yes" type="button" value="Restart" onClick="window.location.reload()">
         <script>
     
-    
+//Variables for the game var canvas stores an HTML element
         var canvas = document.getElementById("canvas")
+//CTX is like is used to manipulate the canvas
         var ctx = canvas.getContext("2d")
+//Changes to true or false when clikced on canvas
         var mousedown = false;
+//Y value of the ball is when we choose to draw the ball on ball height
         var ballheight = 150
         var lineA = 50
         var lineB = 250
@@ -38,16 +46,20 @@
         var difficulty = 1
         var score = 0
 
-        
+//Function that loops over and over gain
         function tick(){
             ballheight = ballheight + gravity
+            
+//By adding other variables which are represented by numbeers this I can alter Line A and Line B's heights constantly
             lineA = lineA + lineAy
             lineB = lineB + lineBy
             difficulty = difficulty + 0.1
             score = score + 100
-            
+
+//Return Id Score
             document.getElementById("score").innerHTML = score
-            
+
+//Set limits to the Lines so they change directions
             if(lineA > 100 + difficulty){
                 lineAy = lineAy * -1
                 
@@ -67,33 +79,40 @@
                 
             }  
             
+            
+//If mousedown is true we add to Gravity which makes ball go up Gravity is constantly changing 
             if(mousedown === true){
                 gravity = gravity - .2
             }
             else {
                 gravity = gravity + .2
             }
-            
-    
+
+//Draws Ball at Ball Height
             ctx.beginPath();
             ctx.arc(50,ballheight,20,0,2*Math.PI);
             ctx.clearRect(0,0,1000,300)
             ctx.stroke();
+            
+//Draws Line at Line height, this starts at 0,0 and it's hiehgt ia Line A and width is 100, so it stretches
             ctx.fillRect(0,lineA,100,2)
             ctx.fillRect(0,lineB,100,2)
+            
+//How to End a Game
+//Calling a function, called Kill function which doesn't exist, so the game crashes and needs to be reloaded
             if (ballheight<lineA){
                 kill()
             }
             if (ballheight>lineB){
                 kill()
             }
-            
+//this tick calls itself by running itself over and over again, Javascrtipy will tke Window. requestion Animation Frame(tick) and it slows down after it's called
             window.requestAnimationFrame(tick)
         }
         var gravity = 0
         tick()
     
-        
+//When I click down ball rises,
         function down(){
             mousedown = true
         }
@@ -101,22 +120,6 @@
         function up(){
             mousedown = false
         }
-
-function accelerate(n) {
-    myGamePiece.gravity = n;
-}
-        
-var myGamePiece;
-var myObstacle;
-
-
-function updateGameArea() {
-    myGameArea.clear();
-    myObstacle.update();
-    myGamePiece.newPos();
-    myGamePiece.update();
-}
-
         </script>
     </body>
 </html>
